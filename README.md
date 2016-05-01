@@ -28,7 +28,7 @@ pip install tornado
 ##### 2.克隆本项目
 如果你已经安装了git作为你的版本控制系统,可以执行下面的命令
 ```
-git clone https://github.com/tornadoweb/tornado
+git clone https://github.com/tianyuwu/tytorn.git
 ```
 如果没有安装git,可以下载本项目的压缩包
 
