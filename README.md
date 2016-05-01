@@ -57,7 +57,7 @@ python server.py
 It is ok, so easy!
 
 ###目录结构
-
+```
 ├── README.md
 ├── requirements.txt   //包依赖
 ├── handlers           //处理网站请求的handler模块
@@ -78,7 +78,7 @@ It is ok, so easy!
 ├── urls.py         //路由配置文件
 ├── config.py         //项目配置文件
 └── app.py          //application实例
-
+```
 ###Credit
 项目综合了guthub其他同仁的一些代码然后加以改进完成的，在此鸣谢
 比如session模块是采用的[REDIS -TORNADO -SESSION](https://github.com/zs1621/tornado-redis-session)
