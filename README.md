@@ -1,85 +1,85 @@
 ## Tytorn - A simple MVC framework based on tornado
-Ò»¸ö»ùÓÚtornadoµÄ¼òµ¥MVC¿ò¼Ü
+ä¸€ä¸ªåŸºäºtornadoçš„ç®€å•MVCæ¡†æ¶
 
 
-### ¿ò¼ÜÌØµã
-- ÓÑºÃµÄÖĞÎÄ×¢ÊÍ
-- ×ã¹»ÇáÁ¿£¬¸ß¶È¿É¶¨ÖÆ
-- ÊµÏÖÁË×ÓÓòÃûµÄÅäÖÃ
-- ·â×°ÁËÈÕÖ¾¼ÇÂ¼£¬postgresql£¬sessionµÈweb¿ª·¢»ù±¾¹¦ÄÜ£¬ÈÃÄú¸ü×¨×¢ÒµÎñÂß¼­
-- ¼¯³ÉÁËrestful api ½Ó¿Ú
-- ÊµÏÖÁËpostgre sqlµÄÒì²½Êı¾İ¿â²Ù×÷
-- ¸ü¶à...
+### æ¡†æ¶ç‰¹ç‚¹
+- å‹å¥½çš„ä¸­æ–‡æ³¨é‡Š
+- è¶³å¤Ÿè½»é‡ï¼Œé«˜åº¦å¯å®šåˆ¶
+- å®ç°äº†å­åŸŸåçš„é…ç½®
+- å°è£…äº†æ—¥å¿—è®°å½•ï¼Œpostgresqlï¼Œsessionç­‰webå¼€å‘åŸºæœ¬åŠŸèƒ½ï¼Œè®©æ‚¨æ›´ä¸“æ³¨ä¸šåŠ¡é€»è¾‘
+- é›†æˆäº†restful api æ¥å£
+- å®ç°äº†postgre sqlçš„å¼‚æ­¥æ•°æ®åº“æ“ä½œ
+- æ›´å¤š...
 
-### ÊÊÓÃÕß
-ÕıÔÚÑ§Ï°tornado£¬²¢³¢ÊÔÓÃtornado´î½¨ÏîÄ¿µÄpython¿ª·¢Õß£¬ËäÈ»¹Ù·½Ìá¹©ºÜ¶àdemo£¬µ«ÊÇÄÇĞ©demo¶¼Ö»ÊÇ×÷Îª²Î¿¼£¬²»ÄÜÓ¦¸¶Êµ¼Ê¿ª·¢ĞèÒª¡£
-±¾ÏîÄ¿¿ÉÒÔÖ±½Ó²¿Êğ²¢×÷Îª¿ª·¢µÄ»ù±¾¿ò¼Ü¡£
+### é€‚ç”¨è€…
+æ­£åœ¨å­¦ä¹ tornadoï¼Œå¹¶å°è¯•ç”¨tornadoæ­å»ºé¡¹ç›®çš„pythonå¼€å‘è€…ï¼Œè™½ç„¶å®˜æ–¹æä¾›å¾ˆå¤šdemoï¼Œä½†æ˜¯é‚£äº›demoéƒ½åªæ˜¯ä½œä¸ºå‚è€ƒï¼Œä¸èƒ½åº”ä»˜å®é™…å¼€å‘éœ€è¦ã€‚
+æœ¬é¡¹ç›®å¯ä»¥ç›´æ¥éƒ¨ç½²å¹¶ä½œä¸ºå¼€å‘çš„åŸºæœ¬æ¡†æ¶ã€‚
 
-###¿ìËÙÉÏÊÖ
+###å¿«é€Ÿä¸Šæ‰‹
 
-##### 1.°²×°tornado
+##### 1.å®‰è£…tornado
 
-[ÁË½âtornado](https://github.com/tornadoweb/tornado "ÁË½âtornado")
+[äº†è§£tornado](https://github.com/tornadoweb/tornado "äº†è§£tornado")
 
 ```shell
 pip install tornado
 ```
 
-##### 2.¿ËÂ¡±¾ÏîÄ¿
-Èç¹ûÄãÒÑ¾­°²×°ÁËgit×÷ÎªÄãµÄ°æ±¾¿ØÖÆÏµÍ³,¿ÉÒÔÖ´ĞĞÏÂÃæµÄÃüÁî
+##### 2.å…‹éš†æœ¬é¡¹ç›®
+å¦‚æœä½ å·²ç»å®‰è£…äº†gitä½œä¸ºä½ çš„ç‰ˆæœ¬æ§åˆ¶ç³»ç»Ÿ,å¯ä»¥æ‰§è¡Œä¸‹é¢çš„å‘½ä»¤
 ```
-git clone https://github.com/tornadoweb/tornado
+git clone https://github.com/tianyuwu/tytorn.git
 ```
-Èç¹ûÃ»ÓĞ°²×°git,¿ÉÒÔÏÂÔØ±¾ÏîÄ¿µÄÑ¹Ëõ°ü
+å¦‚æœæ²¡æœ‰å®‰è£…git,å¯ä»¥ä¸‹è½½æœ¬é¡¹ç›®çš„å‹ç¼©åŒ…
 
-####  3.°²×°ÏîÄ¿°üÒÀÀµ
+#####  3.å®‰è£…é¡¹ç›®åŒ…ä¾èµ–
 ```
 pip install -r requirements.txt
 ```
 
-####   4.ÅäÖÃÊı¾İ¿âÁ¬½Ó
-ĞŞ¸Äconfig.pyÄ¿Â¼ÀïµÄ¶ÔÓ¦Ïî
+#####   4.é…ç½®æ•°æ®åº“è¿æ¥
+ä¿®æ”¹config.pyç›®å½•é‡Œçš„å¯¹åº”é¡¹
 ```
 DB_HOST = '127.0.0.1'
 DB_PORT = 5432
 DB_DATABASE = 'your database'
 DB_USER = 'tytorn'
 DB_PASSWORD = '123456'
-DB_ASYNC_MAXCONN = 33  # ×î´óÒì²½Á¬½ÓÊı
-DB_SYNC_MAXCONN = 10  # ×î´óÍ¬²½Á¬½ÓÊı
+DB_ASYNC_MAXCONN = 33  # æœ€å¤§å¼‚æ­¥è¿æ¥æ•°
+DB_SYNC_MAXCONN = 10  # æœ€å¤§åŒæ­¥è¿æ¥æ•°
 ```
-#####  5.ÔËĞĞÏîÄ¿
-ÔÚÃüÁîĞĞÏÂ½øÈë±¾ÏîÄ¿£¬Ö´ĞĞÏÂÃæµÄÃüÁî
+#####  5.è¿è¡Œé¡¹ç›®
+åœ¨å‘½ä»¤è¡Œä¸‹è¿›å…¥æœ¬é¡¹ç›®ï¼Œæ‰§è¡Œä¸‹é¢çš„å‘½ä»¤
 ```
 python server.py
 ```
 
 It is ok, so easy!
 
-###Ä¿Â¼½á¹¹
+###ç›®å½•ç»“æ„
 ```
-©À©¤©¤ README.md
-©À©¤©¤ requirements.txt   //°üÒÀÀµ
-©À©¤©¤ handlers           //´¦ÀíÍøÕ¾ÇëÇóµÄhandlerÄ£¿é
-©¦   ©À©¤©¤ api              //rest api Ä£¿é
-©¦   ©À©¤©¤ main.py          //Ö÷ÓòÃûÏÂµÄhandlers
-©¦   ©À©¤©¤ admin.py         //ºóÌ¨Ä£¿é
-©¦   ©À©¤©¤ ...
-©À©¤©¤ models         // Ä£ĞÍ
-©À©¤©¤ libs            //³£ÓÃµÚÈı·½¿â
-©À©¤©¤ static          //¾²Ì¬×ÊÔ´
-©À©¤©¤ utils           //ÏîÄ¿µ×²ã¿â
-©¦   ©À©¤©¤ log.py           //ÈÕÖ¾²Ù×÷Àà
-©¦   ©À©¤©¤ postgredb        //Êı¾İ¿â²Ù×÷Àà
-©¦   ©À©¤©¤ session.py       //session²Ù×÷Àà
-©¦   ©À©¤©¤ tools.py         //¹¤¾ß¿â
-©¦   ©À©¤©¤ httpresponse.py  //rest apiÏìÓ¦Êı¾İ¹æ·¶
-©À©¤©¤ server.py       //Èë¿ÚÎÄ¼ş
-©À©¤©¤ urls.py         //Â·ÓÉÅäÖÃÎÄ¼ş
-©À©¤©¤ config.py         //ÏîÄ¿ÅäÖÃÎÄ¼ş
-©¸©¤©¤ app.py          //applicationÊµÀı
+â”œâ”€â”€ README.md
+â”œâ”€â”€ requirements.txt   //åŒ…ä¾èµ–
+â”œâ”€â”€ handlers           //å¤„ç†ç½‘ç«™è¯·æ±‚çš„handleræ¨¡å—
+â”‚   â”œâ”€â”€ api              //rest api æ¨¡å—
+â”‚   â”œâ”€â”€ main.py          //ä¸»åŸŸåä¸‹çš„handlers
+â”‚   â”œâ”€â”€ admin.py         //åå°æ¨¡å—
+â”‚   â”œâ”€â”€ ...
+â”œâ”€â”€ models         // æ¨¡å‹
+â”œâ”€â”€ libs            //å¸¸ç”¨ç¬¬ä¸‰æ–¹åº“
+â”œâ”€â”€ static          //é™æ€èµ„æº
+â”œâ”€â”€ utils           //é¡¹ç›®åº•å±‚åº“
+â”‚   â”œâ”€â”€ log.py           //æ—¥å¿—æ“ä½œç±»
+â”‚   â”œâ”€â”€ postgredb        //æ•°æ®åº“æ“ä½œç±»
+â”‚   â”œâ”€â”€ session.py       //sessionæ“ä½œç±»
+â”‚   â”œâ”€â”€ tools.py         //å·¥å…·åº“
+â”‚   â”œâ”€â”€ httpresponse.py  //rest apiå“åº”æ•°æ®è§„èŒƒ
+â”œâ”€â”€ server.py       //å…¥å£æ–‡ä»¶
+â”œâ”€â”€ urls.py         //è·¯ç”±é…ç½®æ–‡ä»¶
+â”œâ”€â”€ config.py         //é¡¹ç›®é…ç½®æ–‡ä»¶
+â””â”€â”€ app.py          //applicationå®ä¾‹
 ```
 ###Credit
-ÏîÄ¿×ÛºÏÁËguthubÆäËûÍ¬ÈÊµÄÒ»Ğ©´úÂëÈ»ºó¼ÓÒÔ¸Ä½øÍê³ÉµÄ£¬ÔÚ´ËÃùĞ»
-±ÈÈçsessionÄ£¿éÊÇ²ÉÓÃµÄ[REDIS -TORNADO -SESSION](https://github.com/zs1621/tornado-redis-session)
-restful·½°¸ÊÇ²ÉÓÃµÄ[tornado-rest](https://github.com/rancavil/tornado-rest)
+é¡¹ç›®ç»¼åˆäº†guthubå…¶ä»–åŒä»çš„ä¸€äº›ä»£ç ç„¶ååŠ ä»¥æ”¹è¿›å®Œæˆçš„ï¼Œåœ¨æ­¤é¸£è°¢
+æ¯”å¦‚sessionæ¨¡å—æ˜¯é‡‡ç”¨çš„[REDIS -TORNADO -SESSION](https://github.com/zs1621/tornado-redis-session)
+restfulæ–¹æ¡ˆæ˜¯é‡‡ç”¨çš„[tornado-rest](https://github.com/rancavil/tornado-rest)
