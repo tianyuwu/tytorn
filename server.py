@@ -39,7 +39,8 @@ class App:
     def shutdown(self):
         Log.Info('Stopping http server')
 
-        self.http_server.stop()  # 不接收新的 HTTP 请求
+        if self.http_server is not None:
+            self.http_server.stop()  # 不接收新的 HTTP 请求
 
         Log.Info('Will shutdown in %s seconds ...'%1)
         # self.io_loop = tornado.ioloop.IOLoop.instance()

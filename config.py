@@ -10,8 +10,8 @@
 # postgre配置
 DB_HOST = '127.0.0.1'
 DB_PORT = 5432
-DB_DATABASE = 'blogdb'
-DB_USER = 'dbuser'
+DB_DATABASE = 'tyhub'
+DB_USER = 'postgres'
 DB_PASSWORD = '123kkk'
 DB_ASYNC_MAXCONN = 33  # 最大异步连接数
 DB_SYNC_MAXCONN = 10  # 最大同步连接数

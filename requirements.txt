@@ -4,3 +4,4 @@ redis
 hashlib
 ujson
 momoko
+pyconvert
