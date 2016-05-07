@@ -7,7 +7,6 @@
 #   Desc    :   Test db
 #
 #
-import json
 import logging
 import tools
 

@@ -20,9 +20,15 @@ class PostgreDb(object):
         self.adb_trans = []
         super(PostgreDb, self).__init__()
 
-    # 执行插入或者更新，返回true或者false
+
     @tornado.gen.coroutine
     def Exec(self, sqlstr, *parm):
+        """
+        执行插入或者更新，返回true或者false
+        :param sqlstr:
+        :param parm:
+        :return:
+        """
         tools.PrintSqlStr(sqlstr, parm)
         rv = True
         try:
@@ -40,6 +46,12 @@ class PostgreDb(object):
             raise tornado.gen.Return(rv)
 
     def TransExec(self, sqlstr, *parm):
+        """
+        进行事务
+        :param sqlstr:
+        :param parm:
+        :return:
+        """
         tools.PrintSqlStr(sqlstr, parm)
         if not self.adb_trans:
             self.adb_trans = []
@@ -49,6 +61,10 @@ class PostgreDb(object):
 
     @tornado.gen.coroutine
     def TransCommit(self):
+        """
+        提交事务
+        :return:
+        """
         rv = True
         try:
             cursors = yield mk_pool.transaction(self.adb_trans)
@@ -64,9 +80,14 @@ class PostgreDb(object):
             self.adb_trans = []
             raise tornado.gen.Return(rv)
 
-    # 执行查询，返回多条数据
     @tornado.gen.coroutine
     def Query(self, sqlstr, *parm):
+        """
+        执行查询，返回多条结果
+        :param sqlstr:
+        :param parm:
+        :return:
+        """
         rv = []
         tools.PrintSqlStr(sqlstr, parm)
 
@@ -75,6 +96,12 @@ class PostgreDb(object):
             _fetch = cursor.fetchall()
             if _fetch:
                 rv = _fetch
+                if rv:
+                    # 结果中如果有datetime类型，转换为对应的字符串
+                    for row in rv:
+                        for k, v in row.items():
+                            if isinstance(v, datetime.datetime):
+                                row[k] = v.strftime('%Y-%m-%d %H:%M:%S')
 
         except Exception as e:
             errormsg = '[sqlerrror]' + repr(e)
@@ -84,9 +111,14 @@ class PostgreDb(object):
         finally:
             raise tornado.gen.Return(rv)
 
-    # 查询，返回一条数据
     @tornado.gen.coroutine
     def QueryOne(self, sqlstr, *parm):
+        """
+        执行查询，返回一条结果
+        :param sqlstr:
+        :param parm:
+        :return:
+        """
         rv = []
         tools.PrintSqlStr(sqlstr, parm)
 
@@ -95,6 +127,13 @@ class PostgreDb(object):
             _fetch = cursor.fetchall()
             if _fetch:
                 rv = _fetch
+
+                if rv:
+                    # 结果中如果有datetime类型，转换为对应的字符串
+                    for row in rv:
+                        for k, v in row.items():
+                            if isinstance(v, datetime.datetime):
+                                row[k] = v.strftime('%Y-%m-%d %H:%M:%S')
 
         except Exception as e:
             errormsg = '[sqlerrror]' + repr(e)
@@ -103,30 +142,3 @@ class PostgreDb(object):
 
         finally:
             raise tornado.gen.Return(rv[0])
-
-    # 执行查询，返回结果list
-    @tornado.gen.coroutine
-    def QueryNoParam(self, sqlstr):
-        rv = []
-        print sqlstr
-        # utils.PrintSqlStr(sqlstr)
-        try:
-            cursor = yield mk_pool.execute(sqlstr, None)
-            _fetch = cursor.fetchall()
-            if _fetch:
-                rv = _fetch
-
-                # 结果中如果有datetime类型，转换为对应的字符串
-                for row in rv:
-                    for k, v in row.items():
-                        if isinstance(v, datetime.datetime):
-                            row[k] = v.strftime('%Y-%m-%d %H:%M:%S')
-
-
-        except Exception as e:
-            errormsg = '[sqlerrror]' + repr(e)
-            print errormsg
-            raise errormsg
-
-        finally:
-            raise tornado.gen.Return(rv)
