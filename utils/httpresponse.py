@@ -9,7 +9,7 @@
 #
 import json
 import logging
-from utils import tools
+import tools
 
 class ResponseCode:
     SUCCESS = 0
