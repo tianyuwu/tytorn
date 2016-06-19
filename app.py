@@ -63,10 +63,11 @@ class Application(tornado.web.Application):
         future = postgredb.mk_pool.connect()
         ioloop.add_future(future, lambda f: ioloop.stop())
         ioloop.start()
-
-        future = postgredb.mk_pool.register_json()
-        # This is the other way to run ioloop in sync
-        ioloop.run_sync(lambda: future)
+        future.result()
+        #
+        # future = postgredb.mk_pool.register_json()
+        # # This is the other way to run ioloop in sync
+        # ioloop.run_sync(lambda: future)
         Log.Info('Current Postgresql Version:%s'%postgredb.mk_pool.server_version)
         super(Application, self).__init__(handlers=main_urls, **settings)
 
