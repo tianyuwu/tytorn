@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--<header-component/>-->
-        <div>${username}</div>
+        <div>${reg_time}</div>
         <!--<other-component/>-->
     </div>
 </template>
@@ -15,7 +15,7 @@
 //    import OtherComponent from './components/other.vue'
     module.exports = {
         data(){
-            return window.data
+            return data
         },
 //        components:{
 //            'other-component':OtherComponent,

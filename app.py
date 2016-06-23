@@ -74,4 +74,5 @@ class Application(tornado.web.Application):
         for sub_url in sub_urls:
             self.add_handlers(sub_url[0], sub_url[1])
 
-        self.session_manager = session.SessionManager(settings["session_secret"], settings["store_options"], settings["session_timeout"])
+        self.session_manager = session.SessionManager(settings["session_secret"], settings["store_options"],
+                                                      settings["session_timeout"])

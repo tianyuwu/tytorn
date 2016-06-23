@@ -4,7 +4,6 @@
 var Vue = require('vue');
 Vue.config.delimiters = ['${', '}'];
 var App = require('../components/app.vue');
-// new Vue(require('./index.vue'))
 new Vue({
     el:'body',
     // data:{username:"wutianyu"}

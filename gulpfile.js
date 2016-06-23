@@ -46,7 +46,7 @@ function getConfig(opt) {
     return config
   }
   for (var i in opt) {
-    config[i] = opt
+    config[i] = opt[i]
   }
   return config
 }
