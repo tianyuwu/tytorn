@@ -16,10 +16,14 @@ import tornado.gen
 
 
 class IndexHandler(MainBaseHandler):
+
     @tornado.web.asynchronous
     @tornado.gen.coroutine
     def get(self):
         article = yield self.Query("select * FROM users limit 2")
-        # print article
+        print article
         # self.write('恭喜你成功部署tytorn!')
-        self.render('index.html', data=json.dumps(article[0]))
+        self.render('index.html', data=article[0])
+
+    def post(self):
+        pass
